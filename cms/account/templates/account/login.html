@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'account/style.css' %}">
+</head>
+<body>
+	<form method="POST" action="" class="form">
+		{% csrf_token %}
+		<div class="header">
+			Login
+		</div>
+		{% for message in messages %}
+			<p id="messagess">{{ message }}</p>
+		{% endfor %}
+		{% csrf_token %}
+		<div class="input-group">
+			<input type="text" name="username" placeholder="Username">
+			<i class="fas fa-user input-icon"></i>
+		</div>
+		<div class="input-group">
+			<input type="password" name="password" placeholder="Password">
+			<i class="fas fa-lock input-icon"></i>
+		</div>
+		{{form.errors}}
+		<input class="btn-submit" type="submit" value="Sign in">
+		<span style="font-size: 0.75rem; margin-top: 10px;">Don't have an account? <a href="{% url 'register' %}">Sign up</a></span>
+	</form>
+	<script type="text/javascript">
+		var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Username';
+		form_fields[2].placeholder='Password';
+	</script>
+</body>
+</html>
+

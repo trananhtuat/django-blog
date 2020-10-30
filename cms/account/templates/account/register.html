@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'account/style.css' %}">
+</head>
+<body>
+	<form method="POST" action="" class="form">
+		<div class="header">
+			Create Account
+		</div>
+		{% csrf_token %}
+		<div class="input-group">
+			{{form.username}}
+			<i class="fas fa-user input-icon"></i>
+		</div>
+		<div class="input-group">
+			{{form.email}}
+			<i class="fas fa-at input-icon"></i>
+		</div>
+		<div class="input-group">
+			{{form.password1}}
+			<i class="fas fa-lock input-icon"></i>
+		</div>
+		<div class="input-group">
+			{{form.password2}}
+			<i class="fas fa-lock input-icon"></i>
+		</div>
+		{{form.errors}}
+		<input class="btn-submit" type="submit" value="Sign up">
+		<span style="font-size: 0.75rem; margin-top: 10px;">Already have an account? <a href="{% url 'login' %}">Sign in</a></span>
+	</form>
+	<script type="text/javascript">
+		var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Username';
+		form_fields[2].placeholder='Email';
+		form_fields[3].placeholder='Enter password';
+		form_fields[4].placeholder='Re-enter Password';
+	</script>
+</body>
+</html>
+

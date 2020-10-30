@@ -1,0 +1,96 @@
+:root {
+	--main-bg-color: #f0f0f0;
+	--form-bg-color: #fff;
+	--input-bg-color: #eee;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--main-bg-color);
+	font-family: 'Poppins', sans-serif;
+	height: 100%;
+	margin: 0;
+	background-image: url("assets/james-coleman-5BOJ0_g4mcU-unsplash.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.form {
+	width: 300px;
+	background: var(--form-bg-color);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 50px;
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+	0 10px 10px rgba(0,0,0,0.22);
+	border-radius: 15px;
+}
+
+.input-group {
+	position: relative;
+	width: 100%;
+}
+
+.input-group > input {
+	background: var(--input-bg-color);
+	border: none;
+	padding: 12px 22px;
+	margin: 8px;
+	width: -webkit-fill-available;
+	outline: none;
+	border-radius: 20px;
+}
+
+.password-toggle {
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.input-icon {
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: #676767;
+}
+
+.header {
+	padding-bottom: 50px;
+	font-size: x-large;
+}
+
+input[type=submit] {
+	margin-top: 50px;
+	padding: 10px 35px;
+	border-radius: 15px;
+	outline: none;
+	border: none;
+	background: #27ae60;
+	color: #fff;
+	font-size: 1.2rem;
+	transition: all .5s
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+	transform: scale(1.2);
+}
