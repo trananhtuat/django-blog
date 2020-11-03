@@ -16,7 +16,6 @@
 		{% for message in messages %}
 			<p id="messagess">{{ message }}</p>
 		{% endfor %}
-		{% csrf_token %}
 		<div class="input-group">
 			<input type="text" name="username" placeholder="Username">
 			<i class="fas fa-user input-icon"></i>

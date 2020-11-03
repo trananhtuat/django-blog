@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	{% if title %}
+        <title>
+        	Django Blog - {{ title }}
+        </title>
+    {% else %}
+        <title>
+        	Django Blog
+        </title>
+    {% endif %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'post/post.css' %}">
 </head>
 <body>
-	<h1>
+	<!-- <h1>
 		Hello {{request.user}}
-	</h1>
-	<a href="{% url 'logout' %}">Logout</a>
+	</h1> -->
+	<div class="header">
+	  	<h1>Django Blog</h1>
+	  	<p>A website created by Tuat</p>
+	</div>
+
+	<div class="navbar">
+		<div class="container">
+			<a href="{% url 'post' %}">Home</a>
+		  	<a href="{% url 'post-create' %}">New post</a>
+		  	<a href="#">Link</a>
+		  	<a href="{% url 'logout' %}" class="right">Logout</a>
+		</div>
+	  	
+	</div>
+
+	<div class="container">
+		<div class="row">
+		  	<div class="side">
+		    	<h3>More Text</h3>
+		    	<p>Lorem ipsum dolor sit ame.</p>
+		    	<div class="fakeimg" style="height:60px;">Image</div><br>
+		    	<div class="fakeimg" style="height:60px;">Image</div><br>
+		    	<div class="fakeimg" style="height:60px;">Image</div>
+		  		</div>
+		  	<div class="main">
+		  		{% block content %}{% endblock %}
+		  	</div>
+		</div>
+	</div>
+	<div class="footer">
+	  	<h2>Footer</h2>
+	</div>
 </body>
 </html>
 

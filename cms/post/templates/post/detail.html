@@ -1,0 +1,10 @@
+{% extends "post/index.html" %}
+{% block content %}
+	<h2>{{ object.title }}</h2>
+	<h5>{{ object.date_created|date:"F d, Y H:m:s" }} - {{ object.author }}</h5>
+	<div class="fakeimg" style="height:200px;">Image</div>
+	<div class="post-content">
+		{{ object.content }}
+	</div>
+	<br>
+{% endblock content %}
