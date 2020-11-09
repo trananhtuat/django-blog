@@ -40,6 +40,8 @@ class PostDetailView(DetailView):
 
 # @login_required(login_url='login')
 class PostCreateView(LoginRequiredMixin, CreateView):
+    login_url='login'
+
     model = Post
     fields = ['title', 'content']
     template_name = 'post/create.html'
