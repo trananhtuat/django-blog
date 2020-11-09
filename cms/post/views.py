@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from .models import Post
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import (
     ListView,
@@ -36,8 +38,13 @@ class PostDetailView(DetailView):
     model = Post
     template_name = 'post/detail.html'
 
-class PostCreateView(CreateView):
+# @login_required(login_url='login')
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
     template_name = 'post/create.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 

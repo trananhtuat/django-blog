@@ -1,12 +1,12 @@
 {% extends "post/index.html" %}
 {% block content %}
-	<div class="content-section" class="form">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form }}
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Post</button>
-            </div>
-        </form>
-    </div>
+<div class="content-section" class="form">
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {{ form }}
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Post</button>
+        </div>
+    </form>
+</div>
 {% endblock content %}

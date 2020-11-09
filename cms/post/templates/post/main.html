@@ -1,9 +1,17 @@
 {% extends "post/index.html" %}
 {% block content %}
 	{% for post in posts %}
-		<h2><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-		<h5>{{ post.date_created|date:"F d, Y H:m:s" }} - {{ post.author }}</h5>
-		<div class="fakeimg" style="height:200px;">Image</div>
+		<h2>
+			<a href="{% url 'post-detail' post.id %}">
+				{{ post.title }}
+			</a>
+		</h2>
+		<h5>
+			{{ post.date_created|date:"F d, Y H:m:s" }} - {{ post.author }}
+		</h5>
+		<div class="fakeimg" style="height:200px;">
+			Image
+		</div>
 		<div class="post-content">
 			{{ post.content }}
 		</div>
